@@ -24,28 +24,34 @@ export default function Sidebar() {
   ];
 
   return (
-    <aside className="fixed left-0 top-16 bottom-0 w-64 border-r bg-white p-4 hidden md:block">
-      <nav className="space-y-2">
-        {menuItems.map((item) => (
-          <Link
-            key={item.label}
-            href="#"
-            className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-colors hover:text-gray-900 hover:bg-gray-100"
-          >
-            <item.icon className="h-5 w-5" />
-            {item.label}
-          </Link>
-        ))}
-      </nav>
-      <div className="absolute bottom-4 w-[calc(100%-32px)]">
-        <Link
-          href="#"
-          className="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-500 transition-colors hover:text-gray-900 hover:bg-gray-100"
-        >
-          <LogOut className="h-5 w-5" />
-          Log out
-        </Link>
+    <aside className="w-60 rounded-lg flex-col lg:flex hidden">
+      <div className="flex items-center py-6 px-6 w-full bg-white rounded-lg shadow-sm mb-8">
+        <h1 className="text-2xl font-serif">LOGO</h1>
       </div>
+      <nav className="bg-white py-6 rounded-lg shadow-sm">
+        <div className="flex-1 space-y-3">
+          {menuItems.map((item) => (
+            <Link
+              key={item.label}
+              href="#"
+              className="flex items-center gap-3 first:text-black first:border-l-2 first:border-l-sidebarActiveBorder px-6 py-2 text-gray-500 transition-colors hover:text-gray-900 hover:bg-gray-100"
+            >
+              <item.icon className="h-5 w-5" />
+              {item.label}
+            </Link>
+          ))}
+        </div>
+        <div className="mt-20">
+          <Link
+            href="#"
+            className="flex items-center gap-3 rounded-lg px-6 py-2 text-gray-500 transition-colors hover:text-gray-900 hover:bg-gray-100"
+          >
+            <LogOut className="h-5 w-5" />
+            Log out
+          </Link>
+        </div>
+      </nav>
+      <p className="text-xs text-gray-400 my-2 p-2">2024 logo name</p>
     </aside>
   );
 }
