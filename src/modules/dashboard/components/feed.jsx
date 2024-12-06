@@ -81,9 +81,7 @@ export default function Feed() {
               <img
                 src={post.image}
                 alt="Post image"
-                width={600}
-                height={300}
-                className="w-full rounded-lg"
+                className="w-full h-64 object-cover rounded-lg"
               />
 
               <Heart

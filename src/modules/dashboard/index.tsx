@@ -5,7 +5,7 @@ import ArtistSidebar from "./components/artist-sidebar";
 
 const Dashboard = () => {
   return (
-    <div className="bg-gray-50">
+    <div className="bg-gray-50 p-2">
       <div className="lg:w-[1200px] w-full mx-auto space-y-4">
         <div className="flex flex-row overflow-y-hidden">
           <Sidebar />
