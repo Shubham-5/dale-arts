@@ -10,8 +10,10 @@ import {
   LogOut,
 } from "lucide-react";
 import { Link } from "react-router";
+import { useAuth } from "../../../context/auth-context";
 
 export default function Sidebar() {
+  const { logout } = useAuth();
   const menuItems = [
     { icon: Home, label: "Home" },
     { icon: Bell, label: "Notifications" },
@@ -42,13 +44,13 @@ export default function Sidebar() {
           ))}
         </div>
         <div className="mt-20">
-          <Link
-            href="#"
+          <button
             className="flex items-center gap-3 rounded-lg px-6 py-2 text-gray-500 transition-colors hover:text-gray-900 hover:bg-gray-100"
+            onClick={logout}
           >
             <LogOut className="h-5 w-5" />
             Log out
-          </Link>
+          </button>
         </div>
       </nav>
       <p className="text-xs text-gray-400 my-2 p-2">2024 logo name</p>
